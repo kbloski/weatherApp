@@ -1,20 +1,23 @@
 import  path  from 'path';
 import fs from "fs";
+import { ref } from 'vue';
 
 export function loadFileAsText( pathToFile ){
-    try {
-        const filePath =  path.join(import.meta.dirname, pathToFile)
+    const filePath =  path.join(
+        import.meta.dirname
+        , pathToFile)
+    
+    const text = ref("");
+    const error = ref(null)
+    const loading = ref(true)
 
-        const file = fs.readFileSync( filePath, 'utf-8', (err, data) => {
-            if (err){
-                console.error("Błąd podczas odczytu pliku: ", err)
-                return;
-            }
-            return data;
-        })
 
-        return file;
-    } catch (err){
-        console.error(err)
-    }
+    fs.readFile( filePath, 'utf-8', (err, inputFileText) => {
+        loading.value = false;
+        if (err) return error.value = err
+        return text.value = inputFileText;
+    })
+       
+
+    return { text, error, loading }
 }
