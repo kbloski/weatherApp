@@ -1,7 +1,7 @@
 import  path  from 'path';
 import fs from "fs";
 
-export function loadTextFiles( pathToFile ){
+export function loadFileAsText( pathToFile ){
     try {
         const filePath =  path.join(import.meta.dirname, pathToFile)
 
