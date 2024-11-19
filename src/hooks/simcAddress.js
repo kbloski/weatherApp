@@ -1,4 +1,4 @@
-import { loadFileAsText } from "../utils/loadFiles.js";
+import { loadFileAsText } from "./loadFiles.js";
 import { ref, computed, watch } from 'vue';
 
 export function useSimcAddresses(){
