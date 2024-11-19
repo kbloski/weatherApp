@@ -16,7 +16,7 @@ export default {
         watch( simcAdd.loading, () => {
             console.log( simcAdd.loading)
         })
-
+ 
         return {
             data: simcAdd.data,
             loading: simcAdd.loading,
