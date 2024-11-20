@@ -8,19 +8,20 @@
 
 <script>
 import { watch } from 'vue';
-import { useSimcLocations } from '../hooks/simcLocations';
+import { useSimcLocations } from "../hooks/simcLocations";
 
 export default { 
     setup(){
-        const simcAdd = useSimcLocations()
-        watch( simcAdd.loading, () => {
-            console.log( simcAdd.loading)
+        const simcLocations = useSimcLocations()
+        watch( [simcLocations.data], () => {
+            console.log('test')
+            console.log( simcLocations.loading)
         })
  
         return {
-            data: simcAdd.data,
-            loading: simcAdd.loading,
-            errors: simcAdd.error
+            data: simcLocations.data,
+            loading: simcLocations.loading,
+            errors: simcLocations.error
         }
     }
 }
