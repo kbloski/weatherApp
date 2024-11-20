@@ -1,6 +1,7 @@
 <template>
     <div>
-        <div>Temperatura {{ tempC }}</div>
+        {{  data }}
+        <!-- <div>Temperatura {{ tempC }}</div>
         <div>Odczuwalna temperatura {{ feelTempC }}</div>
         <div>Promieniowanie UV {{ uvIndex }}</div>
         <div>Zachmurzenie {{ cloudCover  }}</div>
@@ -10,44 +11,31 @@
         <div>Widoczność {{ visibility  }}</div>
         <div>Kod pogody {{ weatherCode  }}</div>
         <div>Kierunek wiatru w stopniach {{ windDirrectionDegree  }}</div>
-        <div>Prędkość wiatru (km/h) {{ windSpeedKmph  }}</div>
+        <div>Prędkość wiatru (km/h) {{ windSpeedKmph  }}</div> -->
     </div>
 </template>
 
 <script>
-    export default {
-        // props: {
-        //     tempC: {
-        //         type: Number,
-        //         // required: true
-        //     },
-        //     feelTempC:{
-        //         type: Number,
-        //         // required: true
-        //     },  
-        //     cloudCover: {
-        //         type: Number,
-        //         // required: true
-        //     },
-        //     humidity: {
-        //         type: Number,
-        //         // required: true
-        //     },
-        //     precipMM: {
-        //         type: Number,
-        //         // required: true
-        //     },
-        //     pressure: {
-        //         type: Number,
-        //         // required: true,
-        //     },
-        //     uvIndex: Number,
-        //     visibility: Number,
-        //     weatherCode: Number,
-        //     windDirDegree: String,
-        //     windSpeedKmph: Number,
+import { useFetch } from '@/hooks/useFetch';
+import { appLanguage } from '@/config';
 
-        // },
-        props: [ 'tempC', 'feelTempC','cloudCover', 'humidity', 'precipMM',  'pressure', 'uvIndex', 'visibility', 'weatherCode', 'windDirDegree', 'windSpeedKmph']
+    export default {
+        props: { 
+            location: {
+                type: String,
+                required: true
+            }
+        },
+        data(){
+            return {
+                fetchWheater: useFetch(`https://wttr.in/${this.location}?format=j2&lang=${appLanguage}`)
+            }
+        },
+        computed: {
+            data(){
+                return this.fetchWheater.data;
+            }
+
+        }
     }
 </script>
