@@ -1,19 +1,33 @@
 <template>
     <div>
-        <the-search-location v-on:search-submit="testSearch"></the-search-location>        
+        <the-search-location v-on:search-submit="onSearch"></the-search-location>
+        {{ currentCondition }}        
     </div>
 </template>
 
 <script>
-import TheSearchLocation from '@/components/TheSearchLocation.vue';
+import TheSearchLocation from '../components/TheSearchLocation.vue';
+import { useFetch } from '../hooks/useFetch.js';
 
 export default { 
     components: {
         TheSearchLocation
     },
+    data(){
+        return {
+            fetchWheather: useFetch()
+        }
+    },
+    computed:{
+        currentCondition(){
+            return this.fetchWheather.data?.current_condition;
+        }
+
+    },
     methods: {
-        testSearch( searchValue){
-            console.log( searchValue )
+        onSearch( searchValue){
+            const url = `https://wttr.in/${searchValue}?format=j1&lang=pl`
+            this.fetchWheather.setNewUrl( url );
         }
     }
 }

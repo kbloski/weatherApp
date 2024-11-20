@@ -19,7 +19,9 @@ export function useFetch( url ){
         .finally( () => loading.value = false)
     }
 
-    watch( fullUrl, () => fetchData(), { immediate: true})
+    watch( fullUrl, () => {
+        if (fullUrl.value) fetchData()
+    }, { immediate: true})
     
     return {
         data, 
