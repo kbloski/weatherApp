@@ -16,37 +16,38 @@
 
 <script>
     export default {
-        props: {
-            tempC: {
-                type: Number,
-                required: true
-            },
-            feelTempC:{
-                type: Number,
-                required: true
-            },  
-            cloudCover: {
-                type: Number,
-                required: true
-            },
-            humidity: {
-                type: Number,
-                required: true
-            },
-            precipMM: {
-                type: Number,
-                required: true
-            },
-            pressure: {
-                type: Number,
-                required: true,
-            },
-            uvIndex: Number,
-            visibility: Number,
-            weatherCode: Number,
-            windDirDegree: String,
-            windSpeedKmph: Number,
+        // props: {
+        //     tempC: {
+        //         type: Number,
+        //         // required: true
+        //     },
+        //     feelTempC:{
+        //         type: Number,
+        //         // required: true
+        //     },  
+        //     cloudCover: {
+        //         type: Number,
+        //         // required: true
+        //     },
+        //     humidity: {
+        //         type: Number,
+        //         // required: true
+        //     },
+        //     precipMM: {
+        //         type: Number,
+        //         // required: true
+        //     },
+        //     pressure: {
+        //         type: Number,
+        //         // required: true,
+        //     },
+        //     uvIndex: Number,
+        //     visibility: Number,
+        //     weatherCode: Number,
+        //     windDirDegree: String,
+        //     windSpeedKmph: Number,
 
-        }
+        // },
+        props: [ 'tempC', 'feelTempC','cloudCover', 'humidity', 'precipMM',  'pressure', 'uvIndex', 'visibility', 'weatherCode', 'windDirDegree', 'windSpeedKmph']
     }
 </script>

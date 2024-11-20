@@ -1,9 +1,9 @@
 <template>
     <div>
         <the-search-location v-on:search-submit="onSearch"></the-search-location>
-        <the-current-weather
-            ref="current"
-            v-if="currentCondition"
+        <the-current-weather 
+            tempC="3"
+            ref="current" 
         ></the-current-weather>
         {{ currentCondition }}        
     </div>
@@ -25,12 +25,27 @@ export default {
             fetchWheather: useFetch()
         }
     },
+    watch: {
+        currentCondition( val ){
+            if (!val) return;
+
+            const currentWeatherEl = this.$refs.current
+            currentWeatherEl.$props.tempC = 10
+            console.log( currentWeatherEl.$props)
+
+            // console.log( currentWeatherEl. )
+            // for(const [attr, value] of Object.entries( val )){
+            //     currentWeatherEl.setAttribute( attr, value)
+            // }
+            // document.getElementById('id').setAttributes
+        }
+    },
     computed:{
         currentCondition(){
             const currentWeather = this.fetchWheather.data?.current_condition[0];
 
             if (!currentWeather) return null;
-            // [ { "FeelsLikeC": "-6", "FeelsLikeF": "22", "cloudcover": "22", "humidity": "83", "lang_pl": [ { "value": "Bezchmurnie" } ], "localObsDateTime": "2024-11-21 01:25 AM", "observation_time": "09:25 PM", "precipInches": "0.0", "precipMM": "0.0", "pressure": "1021", "pressureInches": "30", "temp_C": "-3", "temp_F": "26", "uvIndex": "0", "visibility": "10", "visibilityMiles": "6", "weatherCode": "113", "weatherDesc": [ { "value": "Clear" } ], "weatherIconUrl": [ { "value": "" } ], "winddir16Point": "S", "winddirDegree": "177", "windspeedKmph": "6", "windspeedMiles": "4" } ]
+
             const props = {
                 tempC: currentWeather.temp_C,
                 feelTempC: currentWeather.FeelsLikeC,
