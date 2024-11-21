@@ -1,2 +1,2 @@
 export const appLanguage = "pl"
-export const appName = "Moja pogoda.pl"
+export const appName = "MOJA POGODA"

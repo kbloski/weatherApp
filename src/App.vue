@@ -1,6 +1,8 @@
 <template>
   <the-header></the-header>
-  <router-view></router-view>
+  <div class="page-container">
+      <router-view></router-view>
+  </div>
 </template>
 
 <script>
@@ -12,3 +14,23 @@ export default {
   }
 }
 </script>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: aout;
+  max-width: 100vw;
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+  width: auto;
+}
+
+.page-container {
+  margin: 0 auto;
+  max-width: 1260px;
+}
+</style>
