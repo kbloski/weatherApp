@@ -2,11 +2,10 @@
     <header>
         <h1 class="title">{{ appName }}</h1>
         <the-navigation></the-navigation>
-        <div>
-            Icons:
-            <span>Search</span>
-            <span>Mail</span>
-            <span>Sidebar Hamburger</span>
+        <div class="actions">
+            <span class="search-icon">⌕</span>
+            <span class="email-icon">✉</span>
+            <span class="burger-icon">☰</span>
         </div>
     </header>
 </template>
@@ -43,5 +42,29 @@ header {
     text-decoration: wavy;
     font-style: italic;
 }
+
+.actions {
+    --font-size: 2rem;
+    color: white;
+}
+
+.actions > * {
+    padding-left: .2rem;
+}
+
+
+.search-icon {
+    font-size: calc(var(--font-size) * 1.4);
+}
+
+.email-icon {
+    font-size: calc(var(--font-size) * 1.1);
+}
+
+.burger-icon {
+    font-size: calc(var(--font-size) * 1);
+}
+
+
 
 </style>
