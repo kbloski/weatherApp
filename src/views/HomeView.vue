@@ -1,4 +1,5 @@
 <template>
+    <base-loading color="white"></base-loading>
     <div class="container">
         <the-search-location v-on:search-submit="onSearch"></the-search-location>
         <the-current-weather 
