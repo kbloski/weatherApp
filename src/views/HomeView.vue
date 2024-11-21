@@ -1,6 +1,9 @@
 <template>
     <div class="container">
-        <base-search v-model="enteredSearch" @click-search-button="onSearch">Twoja lokalizacja</base-search>
+        <base-search 
+            v-model="enteredSearch" 
+            @click-search-button="onSearch"
+        >Twoja lokalizacja</base-search>
         <the-current-weather 
             v-if="currentLocation"
             :location="currentLocation"
@@ -21,9 +24,9 @@ export default {
             enteredSearch: '',
             currentLocation: null,
             fetchWheather: useFetch(),
+            disableSearch: false
         }
     },
-
     computed:{
     },
     methods: {
@@ -32,7 +35,6 @@ export default {
 
             // const url = `https://wttr.in/${searchValue}?format=j1&lang=${appLanguage}`
             // this.fetchWheather.setNewUrl( url );
-            
         }
     }
 }

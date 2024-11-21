@@ -44,7 +44,7 @@ export default {
     border: none;
     background: none;
     cursor: pointer;
-    color: white;
+    color: black;
     font-size: 2.2rem;
     margin: 0;
     margin: 0 .4rem;
@@ -57,7 +57,6 @@ export default {
 
 
 input {
-    border-radius: 1rem;
     font-size: 1.1rem;
     margin: 0;
     padding: .3rem;

@@ -47,8 +47,8 @@ html, body {
 
 .page-container {
   border: 2px solid white;
+  background-color: rgba(240, 248, 255, 0.707);
   backdrop-filter: blur(.4rem);
-  border-radius: 1rem;
   margin: 0 auto;
   max-width: 1260px;
   min-height: 85vh;

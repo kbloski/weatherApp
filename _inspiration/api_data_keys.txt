@@ -1,0 +1,318 @@
+{
+    "current_condition": [
+        {
+            "FeelsLikeC": "-3",
+            "FeelsLikeF": "26",
+            "cloudcover": "0",
+            "humidity": "86",
+            "localObsDateTime": "2024-11-21 05:59 PM",
+            "observation_time": "04:59 PM",
+            "precipInches": "0.0",
+            "precipMM": "0.0",
+            "pressure": "1000",
+            "pressureInches": "30",
+            "temp_C": "-1",
+            "temp_F": "30",
+            "uvIndex": "0",
+            "visibility": "10",
+            "visibilityMiles": "6",
+            "weatherCode": "113",
+            "weatherDesc": [
+                {
+                    "value": "Clear"
+                }
+            ],
+            "winddir16Point": "SSW",
+            "winddirDegree": "199",
+            "windspeedKmph": "6",
+            "windspeedMiles": "4"
+        }
+    ],
+
+    "nearest_area": [
+        {
+            "areaName": [
+                {
+                    "value": "Jaslo"
+                }
+            ],
+            "country": [
+                {
+                    "value": "Poland"
+                }
+            ],
+            "latitude": "49.750",
+            "longitude": "21.467",
+            "population": "37851",
+            "region": [
+                {
+                    "value": ""
+                }
+            ],
+            "weatherUrl": [
+                {
+                    "value": ""
+                }
+            ]
+        }
+    ],
+
+
+    "request": [
+        {
+            "query": "Lat 49.88 and Lon 21.31",
+            "type": "LatLon"
+        }
+    ],
+
+
+
+    "weather": [
+        {
+            "astronomy": [
+                {
+                    "moon_illumination": "70",
+                    "moon_phase": "Waning Gibbous",
+                    "moonrise": "09:09 PM",
+                    "moonset": "12:20 PM",
+                    "sunrise": "06:56 AM",
+                    "sunset": "03:44 PM"
+                }
+            ],
+            "avgtempC": "-1",
+            "avgtempF": "31",
+            "date": "2024-11-21",
+
+
+
+
+            "hourly": [
+                {
+                    "DewPointC": "-5",
+                    "DewPointF": "23",
+                    "FeelsLikeC": "-7",
+                    "FeelsLikeF": "20",
+                    "HeatIndexC": "-4",
+                    "HeatIndexF": "25",
+                    "WindChillC": "-7",
+                    "WindChillF": "20",
+                    "WindGustKmph": "14",
+                    "WindGustMiles": "9",
+                    "chanceoffog": "0",
+                    "chanceoffrost": "96",
+                    "chanceofhightemp": "0",
+                    "chanceofovercast": "43",
+                    "chanceofrain": "0",
+                    "chanceofremdry": "94",
+                    "chanceofsnow": "0",
+                    "chanceofsunshine": "89",
+                    "chanceofthunder": "0",
+                    "chanceofwindy": "0",
+                    "cloudcover": "45",
+                    "diffRad": "0.0",
+                    "humidity": "92",
+                    "lang_pl": [
+                        {
+                            "value": "Częściowe zachmurzenie"
+                        }
+                    ],
+                    "precipInches": "0.0",
+                    "precipMM": "0.0",
+                    "pressure": "1000",
+                    "pressureInches": "30",
+                    "shortRad": "0.0",
+                    "tempC": "-4",
+                    "tempF": "25",
+                    "time": "0",
+                    "uvIndex": "0",
+                    "visibility": "10",
+                    "visibilityMiles": "6",
+                    "weatherCode": "116",
+                    "weatherDesc": [
+                        {
+                            "value": "Partly Cloudy "
+                        }
+                    ],
+                    "weatherIconUrl": [
+                        {
+                            "value": ""
+                        }
+                    ],
+                    "winddir16Point": "S",
+                    "winddirDegree": "186",
+                    "windspeedKmph": "7",
+                    "windspeedMiles": "4"
+                },
+                ....
+            ],
+            "maxtempC": "3",
+            "maxtempF": "38",
+            "mintempC": "-4",
+            "mintempF": "25",
+            "sunHour": "7.0",
+            "totalSnow_cm": "0.2",
+            "uvIndex": "0"
+        },
+        {
+            "astronomy": [
+                {
+                    "moon_illumination": "60",
+                    "moon_phase": "Last Quarter",
+                    "moonrise": "10:23 PM",
+                    "moonset": "12:38 PM",
+                    "sunrise": "06:58 AM",
+                    "sunset": "03:43 PM"
+                }
+            ],
+            "avgtempC": "-1",
+            "avgtempF": "31",
+            "date": "2024-11-22",
+            "hourly": [
+                {
+                    "DewPointC": "-6",
+                    "DewPointF": "22",
+                    "FeelsLikeC": "-7",
+                    "FeelsLikeF": "20",
+                    "HeatIndexC": "-0",
+                    "HeatIndexF": "32",
+                    "WindChillC": "-7",
+                    "WindChillF": "20",
+                    "WindGustKmph": "50",
+                    "WindGustMiles": "31",
+                    "chanceoffog": "0",
+                    "chanceoffrost": "92",
+                    "chanceofhightemp": "0",
+                    "chanceofovercast": "90",
+                    "chanceofrain": "0",
+                    "chanceofremdry": "82",
+                    "chanceofsnow": "0",
+                    "chanceofsunshine": "14",
+                    "chanceofthunder": "0",
+                    "chanceofwindy": "0",
+                    "cloudcover": "100",
+                    "diffRad": "0.0",
+                    "humidity": "65",
+                    "lang_pl": [
+                        {
+                            "value": "Lekkie opady śniegu"
+                        }
+                    ],
+                    "precipInches": "0.0",
+                    "precipMM": "0.0",
+                    "pressure": "1000",
+                    "pressureInches": "30",
+                    "shortRad": "0.0",
+                    "tempC": "-0",
+                    "tempF": "32",
+                    "time": "0",
+                    "uvIndex": "0",
+                    "visibility": "10",
+                    "visibilityMiles": "6",
+                    "weatherCode": "326",
+                    "weatherDesc": [
+                        {
+                            "value": "Light snow"
+                        }
+                    ],
+                    "weatherIconUrl": [
+                        {
+                            "value": ""
+                        }
+                    ],
+                    "winddir16Point": "S",
+                    "winddirDegree": "188",
+                    "windspeedKmph": "31",
+                    "windspeedMiles": "19"
+                },
+               ...
+            ],
+            "maxtempC": "2",
+            "maxtempF": "36",
+            "mintempC": "-3",
+            "mintempF": "26",
+            "sunHour": "6.8",
+            "totalSnow_cm": "0.8",
+            "uvIndex": "0"
+        },
+        {
+            "astronomy": [
+                {
+                    "moon_illumination": "51",
+                    "moon_phase": "Last Quarter",
+                    "moonrise": "11:35 PM",
+                    "moonset": "12:53 PM",
+                    "sunrise": "06:59 AM",
+                    "sunset": "03:42 PM"
+                }
+            ],
+            "avgtempC": "-2",
+            "avgtempF": "29",
+            "date": "2024-11-23",
+            "hourly": [
+                {
+                    "DewPointC": "-3",
+                    "DewPointF": "26",
+                    "FeelsLikeC": "-6",
+                    "FeelsLikeF": "20",
+                    "HeatIndexC": "-2",
+                    "HeatIndexF": "29",
+                    "WindChillC": "-6",
+                    "WindChillF": "20",
+                    "WindGustKmph": "22",
+                    "WindGustMiles": "13",
+                    "chanceoffog": "0",
+                    "chanceoffrost": "84",
+                    "chanceofhightemp": "0",
+                    "chanceofovercast": "92",
+                    "chanceofrain": "100",
+                    "chanceofremdry": "0",
+                    "chanceofsnow": "100",
+                    "chanceofsunshine": "0",
+                    "chanceofthunder": "0",
+                    "chanceofwindy": "0",
+                    "cloudcover": "100",
+                    "diffRad": "0.0",
+                    "humidity": "91",
+                    "lang_pl": [
+                        {
+                            "value": "Przejściowe, średnie lub ciężkie opady śniegu"
+                        }
+                    ],
+                    "precipInches": "0.0",
+                    "precipMM": "0.1",
+                    "pressure": "1010",
+                    "pressureInches": "30",
+                    "shortRad": "0.0",
+                    "tempC": "-2",
+                    "tempF": "29",
+                    "time": "0",
+                    "uvIndex": "0",
+                    "visibility": "7",
+                    "visibilityMiles": "4",
+                    "weatherCode": "371",
+                    "weatherDesc": [
+                        {
+                            "value": "Moderate or heavy snow showers"
+                        }
+                    ],
+                    "weatherIconUrl": [
+                        {
+                            "value": ""
+                        }
+                    ],
+                    "winddir16Point": "WNW",
+                    "winddirDegree": "294",
+                    "windspeedKmph": "14",
+                    "windspeedMiles": "9"
+                },
+            ],
+            "maxtempC": "2",
+            "maxtempF": "36",
+            "mintempC": "-4",
+            "mintempF": "24",
+            "sunHour": "8.0",
+            "totalSnow_cm": "1.0",
+            "uvIndex": "0"
+        }
+    ]
+}
