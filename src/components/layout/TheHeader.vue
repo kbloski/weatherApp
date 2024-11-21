@@ -2,6 +2,12 @@
     <div>
         <h1>{{ appName }}</h1>
         <the-navigation></the-navigation>
+        <div>
+            Icons:
+            <span>Search</span>
+            <span>Mail</span>
+            <span>Sidebar Hamburger</span>
+        </div>
     </div>
 </template>
 

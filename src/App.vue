@@ -1,4 +1,5 @@
 <template>
+  <div class="page-background"></div>
   <the-header></the-header>
   <div class="page-container">
       <router-view></router-view>
@@ -27,6 +28,21 @@ html, body {
   margin: 0;
   padding: 0;
   width: auto;
+}
+
+.page-background {
+  background: url("../public/background-image.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  height: 100vh;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  z-index: -1;
+  
 }
 
 .page-container {
