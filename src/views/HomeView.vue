@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="container">
         <the-search-location v-on:search-submit="onSearch"></the-search-location>
         <the-current-weather 
             v-if="currentLocation"
@@ -22,7 +22,6 @@ export default {
         return {
             currentLocation: null,
             fetchWheather: useFetch(),
-            
         }
     },
 
@@ -39,3 +38,9 @@ export default {
     }
 }
 </script>
+
+<style scoped>
+.container {
+    margin: 1rem;
+}
+</style>

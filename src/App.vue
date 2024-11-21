@@ -53,6 +53,5 @@ html, body {
   max-width: 1260px;
   min-height: 85vh;
   margin-top: 1rem;
-  padding: 1rem;
 }
 </style>
