@@ -43,11 +43,16 @@ html, body {
   top: 0;
   width: 100vw;
   z-index: -1;
-  
 }
 
 .page-container {
+  border: 2px solid white;
+  backdrop-filter: blur(.4rem);
+  border-radius: 1rem;
   margin: 0 auto;
   max-width: 1260px;
+  min-height: 85vh;
+  margin-top: 1rem;
+  padding: 1rem;
 }
 </style>
