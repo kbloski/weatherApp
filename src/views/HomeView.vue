@@ -1,7 +1,6 @@
 <template>
-    <base-loading color="white"></base-loading>
     <div class="container">
-        <the-search-location v-on:search-submit="onSearch"></the-search-location>
+        <base-search v-model="enteredSearch" @click-search-button="onSearch">Twoja lokalizacja</base-search>
         <the-current-weather 
             v-if="currentLocation"
             :location="currentLocation"
@@ -10,17 +9,16 @@
 </template>
 
 <script>
-import TheSearchLocation from '../components/TheSearchLocation.vue';
 import TheCurrentWeather from '../components/TheCurrentWeather.vue';
 import { useFetch } from '../hooks/useFetch.js';
 
 export default { 
     components: {
-        TheSearchLocation,
         TheCurrentWeather
     },
     data(){
         return {
+            enteredSearch: '',
             currentLocation: null,
             fetchWheather: useFetch(),
         }
@@ -29,8 +27,8 @@ export default {
     computed:{
     },
     methods: {
-        onSearch( searchValue){
-            this.currentLocation = searchValue;
+        onSearch(){
+            if(this.enteredSearch) this.currentLocation = this.enteredSearch;
 
             // const url = `https://wttr.in/${searchValue}?format=j1&lang=${appLanguage}`
             // this.fetchWheather.setNewUrl( url );
