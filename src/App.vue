@@ -28,6 +28,7 @@ html, body {
   margin: 0;
   padding: 0;
   width: auto;
+  font-family: Verdana, Geneva, Tahoma, sans-serif
 }
 
 .page-background {

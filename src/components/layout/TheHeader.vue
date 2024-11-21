@@ -1,6 +1,6 @@
 <template>
-    <div>
-        <h1>{{ appName }}</h1>
+    <header>
+        <h1 class="title">{{ appName }}</h1>
         <the-navigation></the-navigation>
         <div>
             Icons:
@@ -8,7 +8,7 @@
             <span>Mail</span>
             <span>Sidebar Hamburger</span>
         </div>
-    </div>
+    </header>
 </template>
 
 <script>
@@ -27,3 +27,21 @@ export default {
 }
 </script>
 
+<style scoped>
+header {
+    align-items: center;;
+    background-color: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(1rem);
+    box-shadow: 0 0 4px rgba(0,0,0,0.2);
+    display: flex;
+    justify-content: space-between;
+    padding: .3rem 2rem;
+}
+
+.title {
+    color: rgba(255,255,255,0.8);
+    text-decoration: wavy;
+    font-style: italic;
+}
+
+</style>
