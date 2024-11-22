@@ -47,6 +47,11 @@ export default {
             return null;
         }
     },
+    created(){
+        this.currentLocation = "Polska"
+        const url = `https://wttr.in/${this.currentLocation}?format=j1&lang=${appLanguage}`
+        if (!this.fetchData) this.fetchWheather.setNewUrl( url )
+    },
     methods: {
         onSearch(){
             if(this.enteredSearch) this.currentLocation = this.enteredSearch;
