@@ -5,7 +5,16 @@
                 <h1>{{ location }}</h1>
             </div>
         </header>
+        <div class="wheter-badge-info">
+            <iframe 
+                :src="wetherUrl"  
+                frameborder="0"
+            ></iframe>
+        </div>
         <div class="current-wheater-body">
+            <div class="">
+                <div>{{ localObsDateTime }}</div>
+            </div>
             <div class="wheater-information">
                 <div>
                     <h3>
@@ -14,7 +23,6 @@
                     <h4>
                         Odczuwalna: {{ FeelsLikeC }} ℃ / {{ FeelsLikeF }} ℉
                     </h4>
-                    
                 </div>
                 <div>
                     <h3>
@@ -33,12 +41,11 @@
                 </div>
             </div>
             <ul>
-                <li>{{ localObsDateTime }}</li>
-                <li>{{ cloudcover}} </li>
-                <li>{{ humidity}} </li>
-                <li>{{ precipMM}} </li>
-                <li>{{ visibility }} </li>
-                <li>{{ winddir16Point }} </li>
+                <li>Zachmurzenie: {{ cloudcover}}% </li>
+                <li>Wilgotność {{ humidity}}%</li>
+                <li>Opady w mm: {{ precipMM}} </li>
+                <li>Widoczeność: {{ visibility }} metrów</li>
+                <li>Kierunek wiatru: {{ winddir16Point }} </li>
             </ul>
         </div>
     </section>
@@ -46,6 +53,8 @@
 
 
 <script>
+import { useFetch } from '@/hooks/useFetch';
+
 
 export default {
     props: [
@@ -78,6 +87,9 @@ export default {
 
             if (descriptionArr) return descriptionArr[0].value
             return  null
+        },
+        wetherUrl(){
+            return `https://wttr.in/${this.$props.location}?format=1`
         }
     }
 }
@@ -90,6 +102,7 @@ export default {
     color: white;
     background-color: rgba(34, 79, 131, 0.8);
     font-weight: lighter;
+    position: relative
 }
 
 .current-wheater-body {
@@ -99,6 +112,8 @@ export default {
 .location-name {
     padding: 0;
     margin: 0;
+    display: flex;
+    align-items: center;
 }
 
 header {
@@ -107,10 +122,21 @@ header {
 
 }
 
+.wheter-badge-info {
+    background-color: white;
+    overflow: hidden;
+    width: 270px;
+    transform: translate(30px , -20px);
+}
+
+.wheter-badge-info > iframe {
+    height: 50px;
+    transform: scale(3) translate(95px, 3px); 
+}
+
 .wheater-information{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
 }
-
 </style>

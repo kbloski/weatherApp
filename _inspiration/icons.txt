@@ -1,0 +1,33 @@
+Bezchmurne niebo ☀️
+
+Biała chmura ☁️
+Kod: U+2601
+Alternatywny kod: &#9729;
+
+Słońce za chmurą 🌥️
+Kod: U+1F325
+Alternatywny kod: &#127781;
+
+Chmura z deszczem 🌧️
+Kod: U+1F327
+Alternatywny kod: &#127783;
+
+Chmura z piorunem i deszczem ⛈️
+Kod: U+26C8
+Alternatywny kod: &#9928;
+
+Chmura z piorunem 🌩️
+Kod: U+1F329
+Alternatywny kod: &#127785;
+
+Chmura z śniegiem 🌨️
+Kod: U+1F328
+Alternatywny kod: &#127784;
+
+Tornado 🌪️
+Kod: U+1F32A
+Alternatywny kod: &#127786;
+
+Mgła 🌫️
+Kod: U+1F32B
+Alternatywny kod: &#127787;

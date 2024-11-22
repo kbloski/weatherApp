@@ -19,6 +19,12 @@
                 v-bind="currentCondidtion" 
             ></the-current-weather>
         </div>
+
+        <div>
+            <pre>
+                {{ result  }}
+            </pre>
+        </div>
     </div>
 </template>
 
@@ -31,11 +37,17 @@ export default {
     components: {
         TheCurrentWeather
     },
+    created(){
+        this.currentLocation = "Polska"
+        const url = `https://wttr.in/${this.currentLocation}?format=j1&lang=${appLanguage}`
+        if (!this.fetchData) this.fetchWheather.setNewUrl( url )
+    },
     data(){
         return {
             enteredSearch: '',
             currentLocation: null,
             fetchWheather: useFetch(),
+            result: 'result'
         }
     },
     computed:{
@@ -46,11 +58,6 @@ export default {
             if (this.fetchData) return this.fetchData.current_condition[0]
             return null;
         }
-    },
-    created(){
-        this.currentLocation = "Polska"
-        const url = `https://wttr.in/${this.currentLocation}?format=j1&lang=${appLanguage}`
-        if (!this.fetchData) this.fetchWheather.setNewUrl( url )
     },
     methods: {
         onSearch(){
