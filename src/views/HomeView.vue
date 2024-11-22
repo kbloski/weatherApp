@@ -15,6 +15,7 @@
         </div>
         <div v-else>
             <the-current-weather 
+                :location="currentLocation"
                 v-bind="currentCondidtion" 
             ></the-current-weather>
         </div>
@@ -39,7 +40,7 @@ export default {
     },
     computed:{
         fetchData(){
-            return this.fetchWheather.error
+            return this.fetchWheather?.data
         },
         currentCondidtion(){
             if (this.fetchData) return this.fetchData.current_condition[0]

@@ -8,6 +8,7 @@ export function useFetch( url ){
 
     function fetchData(){
         loading.value = true;
+        errorCode.value = null;
 
         fetch(fullUrl.value, { method: "GET" })
         .then( res => {

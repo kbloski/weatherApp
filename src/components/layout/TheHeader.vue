@@ -34,6 +34,7 @@ header {
     box-shadow: 0 0 4px rgba(0,0,0,0.2);
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
     padding: .3rem 2rem;
 }
 
