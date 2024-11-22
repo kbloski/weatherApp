@@ -12,17 +12,15 @@
             ></iframe>
         </div>
         <div class="current-wheater-body">
-            <div class="">
-                <div>{{ localObsDateTime }}</div>
+            <div>
+               Czas zarejstrowania warunków pogodowych: 
+               <span>{{ recordDate }}</span>
             </div>
+            <div class="slider"></div>
             <div class="wheater-information">
                 <div>
-                    <h3>
-                        Temperatura: {{ temp_C }} ℃ / {{ temp_F }} ℉
-                    </h3>
-                    <h4>
-                        Odczuwalna: {{ FeelsLikeC }} ℃ / {{ FeelsLikeF }} ℉
-                    </h4>
+                    <h3> Temperatura: {{ temp_C }} ℃ / {{ temp_F }} ℉ </h3>
+                    <h4> Odczuwalna: {{ FeelsLikeC }} ℃ / {{ FeelsLikeF }} ℉ </h4>
                 </div>
                 <div>
                     <h3>
@@ -40,6 +38,7 @@
                     <h4>{{ windspeedMiles }} mph</h4>
                 </div>
             </div>
+            <div class="slider"></div>
             <ul>
                 <li>Zachmurzenie: {{ cloudcover}}% </li>
                 <li>Wilgotność {{ humidity}}%</li>
@@ -53,8 +52,6 @@
 
 
 <script>
-import { useFetch } from '@/hooks/useFetch';
-
 
 export default {
     props: [
@@ -90,6 +87,9 @@ export default {
         },
         wetherUrl(){
             return `https://wttr.in/${this.$props.location}?format=1`
+        },
+        recordDate(){
+            return (new Date(this.$props.localObsDateTime)).toLocaleString() ?? null
         }
     }
 }
@@ -114,6 +114,7 @@ export default {
     margin: 0;
     display: flex;
     align-items: center;
+    text-transform: capitalize;
 }
 
 header {
@@ -132,6 +133,14 @@ header {
 .wheter-badge-info > iframe {
     height: 50px;
     transform: scale(3) translate(95px, 3px); 
+}
+
+.slider {
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+    height: 0;
+    margin: 0;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
 }
 
 .wheater-information{
