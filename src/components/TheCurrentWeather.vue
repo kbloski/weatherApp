@@ -41,13 +41,16 @@
                 </div>
             </div>
             <div class="slider"></div>
-            <ul>
-                <li>Zachmurzenie: {{ cloudcover}}% </li>
-                <li>Wilgotność {{ humidity}}%</li>
-                <li>Opady w mm: {{ precipMM}} </li>
-                <li>Widoczeność: {{ visibility }} metrów</li>
-                <li>Kierunek wiatru: {{ winddir16Point }} </li>
-            </ul>
+            <div>
+                <h4>Pozostałe informacje</h4>
+                <ul>
+                    <li>Zachmurzenie: {{ cloudcover}}% </li>
+                    <li>Wilgotność {{ humidity}}%</li>
+                    <li>Opady w mm: {{ precipMM}} </li>
+                    <li>Widoczeność: {{ visibility }} metrów</li>
+                    <li>Kierunek wiatru: {{ winddir16Point }} </li>
+                </ul>
+            </div>
         </div>
     </section>
 </template>
@@ -149,5 +152,6 @@ header {
     flex-wrap: wrap;
     justify-content: space-evenly;
     padding-bottom: 1rem;
+    background: linear-gradient(to left, transparent, rgba(130, 229, 233, 0.2), transparent)
 }
 </style>
