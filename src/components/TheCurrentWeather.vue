@@ -23,7 +23,7 @@
             <div class="wheater-information">
                 <div>
                     <h3>Temperatura 🌡️</h3>
-                    <div>Bierząca: {{ temp_C }} ℃ / {{ temp_F }} ℉ </div>
+                    <div>Aktualna: {{ temp_C }} ℃ / {{ temp_F }} ℉ </div>
                     <div>Odczuwalna: {{ FeelsLikeC }} ℃ / {{ FeelsLikeF }} ℉ </div>
                 </div>
                 <div>
