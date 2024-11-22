@@ -19,12 +19,6 @@
                 v-bind="currentCondidtion" 
             ></the-current-weather>
         </div>
-
-        <div>
-            <pre>
-                {{ result  }}
-            </pre>
-        </div>
     </div>
 </template>
 

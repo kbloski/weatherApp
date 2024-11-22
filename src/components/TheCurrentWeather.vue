@@ -12,30 +12,32 @@
             ></iframe>
         </div>
         <div class="current-wheater-body">
+            <h2>Pogoda teraz</h2>
             <div>
                Czas zarejstrowania warunków pogodowych: 
                <span>{{ recordDate }}</span>
             </div>
             <div class="slider"></div>
+
+        
             <div class="wheater-information">
                 <div>
-                    <h3> Temperatura: {{ temp_C }} ℃ / {{ temp_F }} ℉ </h3>
-                    <h4> Odczuwalna: {{ FeelsLikeC }} ℃ / {{ FeelsLikeF }} ℉ </h4>
+                    <h3>Temperatura</h3>
+                    <div>Bierząca: {{ temp_C }} ℃ / {{ temp_F }} ℉ </div>
+                    <div>Odczuwalna: {{ FeelsLikeC }} ℃ / {{ FeelsLikeF }} ℉ </div>
                 </div>
                 <div>
-                    <h3>
-                        {{ description }}
-                    </h3>
+                    <h3>Opis pogody</h3>
+                    <div>{{ description }}</div>
                 </div>
                 <div>
-                    <h3>
-                        Ciśnienie: {{ pressure }}Pa
-                    </h3>
+                    <h3>Ciśnienie</h3>
+                    <div> {{ pressure }}Pa </div>
                 </div>
                 <div>
-                    <h3>Prędkość wiatru: </h3>
-                    <h4>{{ windspeedKmph }} km/h</h4>
-                    <h4>{{ windspeedMiles }} mph</h4>
+                    <h3>Prędkość wiatru</h3>
+                    <div>{{ windspeedKmph }} km/h</div>
+                    <div>{{ windspeedMiles }} mph</div>
                 </div>
             </div>
             <div class="slider"></div>
@@ -136,16 +138,16 @@ header {
 }
 
 .slider {
-    padding-top: .5rem;
-    padding-bottom: .5rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
     height: 0;
-    margin: 0;
     border-bottom: 2px solid rgba(255, 255, 255, 0.3);
 }
 
 .wheater-information{
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-evenly;
+    padding-bottom: 1rem;
 }
 </style>
