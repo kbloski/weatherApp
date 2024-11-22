@@ -137,7 +137,8 @@ header {
 
 .wheter-badge-info > iframe {
     height: 50px;
-    transform: scale(3) translate(95px, 3px); 
+    transform: scale(3) translate(95px, 5px); 
+    background-color: white;
 }
 
 .slider {
