@@ -3,11 +3,21 @@
         <base-search 
             v-model="enteredSearch" 
             @click-search-button="onSearch"
-        >Twoja lokalizacja</base-search>
-        <the-current-weather></the-current-weather>
-        <pre>
-            {{ JSON.stringify(fetchData, null, 4) }}
-        </pre>
+        >Twoja lokalizacja?</base-search>
+
+
+        <div v-if="fetchWheather.loading">
+            <base-loading></base-loading>
+        </div>
+
+        <div v-if="fetchWheather.errorCode">
+            {{  fetchWheather.errorCode }}
+        </div>
+        <div v-else>
+            <the-current-weather 
+                v-bind="currentCondidtion" 
+            ></the-current-weather>
+        </div>
     </div>
 </template>
 
@@ -24,14 +34,12 @@ export default {
         return {
             enteredSearch: '',
             currentLocation: null,
-            fetchWheather: useFetch("https://wttr.in/Jodłowa?format=j1&lang=$pl"),
-            // fetchWheather: useFetch(),
-            disableSearch: false
+            fetchWheather: useFetch(),
         }
     },
     computed:{
         fetchData(){
-            return this.fetchWheather.data
+            return this.fetchWheather.error
         },
         currentCondidtion(){
             if (this.fetchData) return this.fetchData.current_condition[0]

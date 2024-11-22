@@ -1,25 +1,41 @@
 <template>
     <section class="current-wheather-container">
-        <!-- <header>
-            <div class="location-name">Test</div>
+        <header>
+            <div class="location-name">{{  temp_C }}</div>
         </header>
 
-        {{  data }} -->
         
     </section>
 </template>
 
-<script>
-    export default {
-        props: { 
-        },
-        computed: {
-            // data(){
-            //     return this.fetchWheater.data?.current_condition[0] ?? null;
-            // }
 
-        }
-    }
+<script>
+
+export default {
+    props: [
+"FeelsLikeC",
+"FeelsLikeF",
+"cloudcover",
+"humidity",
+"localObsDateTime",
+"observation_time",
+"precipInches",
+"precipMM",
+"pressure",
+"pressureInches",
+"temp_C",
+"temp_F",
+"uvIndex",
+"visibility",
+"visibilityMiles",
+"weatherCode",
+"weatherDesc",
+"winddir16Point",
+"winddirDegree",
+"windspeedKmph",
+"windspeedMiles",
+    ],
+}
 </script>
 
 <style scoped>

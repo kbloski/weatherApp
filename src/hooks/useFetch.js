@@ -3,7 +3,7 @@ import { ref, watch } from "vue";
 export function useFetch( url ){
     const fullUrl = ref(url)
     const loading = ref(false);
-    const error = ref(null);
+    const errorCode = ref(null);
     const data = ref(null)
 
     function fetchData(){
@@ -11,11 +11,14 @@ export function useFetch( url ){
 
         fetch(fullUrl.value, { method: "GET" })
         .then( res => {
-            if (!res.ok) throw new Error(res.statusText);
+            if (!res.ok) throw new Error(res.status);
             return res.json()
         })
         .then( resData => data.value = resData)
-        .catch( err => error.value = err.message)
+        .catch( err => {
+            console.log( err.message )
+            errorCode.value = Number(err.message)
+        })
         .finally( () => loading.value = false)
     }
 
@@ -26,7 +29,7 @@ export function useFetch( url ){
     return {
         data, 
         loading,
-        error,
+        errorCode,
         setNewUrl: (url) => fullUrl.value = url
     }
 }
