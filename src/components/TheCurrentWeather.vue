@@ -22,20 +22,20 @@
         
             <div class="wheater-information">
                 <div>
-                    <h3>Temperatura</h3>
+                    <h3>Temperatura 🌡️</h3>
                     <div>Bierząca: {{ temp_C }} ℃ / {{ temp_F }} ℉ </div>
                     <div>Odczuwalna: {{ FeelsLikeC }} ℃ / {{ FeelsLikeF }} ℉ </div>
                 </div>
                 <div>
-                    <h3>Opis pogody</h3>
+                    <h3>Opis pogody 🔻</h3>
                     <div>{{ description }}</div>
                 </div>
                 <div>
-                    <h3>Ciśnienie</h3>
+                    <h3>Ciśnienie 🔻</h3>
                     <div> {{ pressure }}Pa </div>
                 </div>
                 <div>
-                    <h3>Prędkość wiatru</h3>
+                    <h3>Prędkość wiatru 🏳</h3>
                     <div>{{ windspeedKmph }} km/h</div>
                     <div>{{ windspeedMiles }} mph</div>
                 </div>
@@ -43,12 +43,12 @@
             <div class="slider"></div>
             <div>
                 <h4>Pozostałe informacje</h4>
-                <ul>
-                    <li>Zachmurzenie: {{ cloudcover}}% </li>
-                    <li>Wilgotność {{ humidity}}%</li>
-                    <li>Opady w mm: {{ precipMM}} </li>
-                    <li>Widoczeność: {{ visibility }} metrów</li>
-                    <li>Kierunek wiatru: {{ winddir16Point }} </li>
+                <ul class="other-information">
+                    <li>🌥️Zachmurzenie: {{ cloudcover}}% </li>
+                    <li>💧Wilgotność {{ humidity}}%</li>
+                    <li>💧Opady w mm: {{ precipMM}} </li>
+                    <li>🌫️ Widoczność: {{ visibility }} metrów</li>
+                    <li>🧭 Kierunek wiatru: {{ winddir16Point }} </li>
                 </ul>
             </div>
         </div>
@@ -154,4 +154,9 @@ header {
     padding-bottom: 1rem;
     background: linear-gradient(to left, transparent, rgba(130, 229, 233, 0.2), transparent)
 }
+
+.other-information {
+ list-style: none;
+}
+
 </style>

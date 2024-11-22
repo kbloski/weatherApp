@@ -55,8 +55,9 @@ export default {
     },
     methods: {
         onSearch(){
-            if(this.enteredSearch) this.currentLocation = this.enteredSearch;
-
+            if(!this.enteredSearch) return;
+            
+            this.currentLocation = this.enteredSearch;
             const url = `https://wttr.in/${this.enteredSearch}?format=j1&lang=${appLanguage}`
             this.fetchWheather.setNewUrl( url );
         }

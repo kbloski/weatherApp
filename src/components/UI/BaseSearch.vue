@@ -69,6 +69,7 @@ label {
     position: absolute;
     margin-left: 1rem;
     transition: all .3s ease;
+    color: rgba(0,0,0,0.6);
 }
 
 
