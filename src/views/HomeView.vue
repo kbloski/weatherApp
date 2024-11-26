@@ -43,7 +43,7 @@ export default {
         NextDaysWeather
     },
     created(){
-        this.currentLocation = "Polska"
+        this.currentLocation = "Warszawa"
         const url = `https://wttr.in/${this.currentLocation}?format=j1&lang=${appLanguage}`
         if (!this.fetchData) this.fetchWheather.setNewUrl( url )
     },

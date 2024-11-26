@@ -1,9 +1,8 @@
 <template>
     <div>
         <div>
-            <!-- Dzień tygodnia -->
-            {{ dayDate.getDay() }}
-            {{ date }}
+            {{ getStringWeekDay( dayDate.getDay()) }}
+            ( {{ date }} )
         </div>
         <div>
             <div>Oświetlenie księżyca: {{ moonIllumination }}%</div>
@@ -19,13 +18,13 @@
         </div>
         <div> 
             {{ hourly }}
-            {{ console.log( hourly.length)}}
         </div>
     </div>
 </template>
 
 <script>
 import { computed } from 'vue';
+import { getStringWeekDay } from '@/utils/getStringWeekDay';
 
 export default {
     props: {
@@ -59,7 +58,8 @@ export default {
             moonRise,
             moonSet,
             sunRise,
-            sunSet
+            sunSet,
+            getStringWeekDay
         }
     }
 }
