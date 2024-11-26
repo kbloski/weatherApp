@@ -47,7 +47,7 @@
                     <li>🌥️Zachmurzenie: {{ cloudcover}}% </li>
                     <li>💧Wilgotność {{ humidity}}%</li>
                     <li>💧Opady w mm: {{ precipMM}} </li>
-                    <li>🌫️ Widoczność: {{ visibility }} metrów</li>
+                    <li>🌫️ Widoczność: {{ visibility }} km</li>
                     <li>🧭 Kierunek wiatru: {{ winddir16Point }} </li>
                 </ul>
             </div>

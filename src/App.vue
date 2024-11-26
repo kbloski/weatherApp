@@ -54,4 +54,11 @@ html, body {
   min-height: 85vh;
   margin-top: 1rem;
 }
+
+@media screen and (max-width: 800px){
+  .page-container {
+    border: none;
+    padding: .5rem;
+  }
+}
 </style>

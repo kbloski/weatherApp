@@ -15,10 +15,7 @@
              :moonRise
              :moonSet
         ></weather-info-header>
-        
-        <div> 
-            {{ hourly }}
-        </div>
+        <weather-hourly-list :hourly="hourly"></weather-hourly-list>
     </section>
 </template>
 
@@ -26,10 +23,12 @@
 import { computed } from 'vue';
 import { getNameWeekDayByNumber } from '@/utils/getNameWeekDay';
 import WeatherInfoHeader from './WeatherInfoHeader.vue';
+import WeatherHourlyList from './WeatherHourlyList.vue';
 
 export default {
     components: {
-        WeatherInfoHeader
+        WeatherInfoHeader,
+        WeatherHourlyList
     },
     props: {
         astronomy: { required: true},
