@@ -1,32 +1,36 @@
 <template>
-    <div>
-        <div>
+    <section>
+        <h4>
             {{ getNameWeekDayByNumber( dayDate.getDay()) }}
             ( {{ date }} )
-        </div>
-        <div>
-            <div>Oświetlenie księżyca: {{ moonIllumination }}%</div>
-            <div>Faza księżyca: {{ moonPhase }}</div>
-            <div>Wschód słońca: {{ sunRise }}</div>
-            <div>Zachód słońca: {{ sunSet }}</div>
-            <div>Wschód księżyca: {{ moonRise }}</div>
-            <div>Zachód księżyca: {{ moonSet }}</div>
-        </div>
-        <div>
-            Średnia dzienna temperatura: 
-            {{  avgtempC }}℃  ({{  avgtempF }}℉)
-        </div>
+        </h4>
+        <weather-info-header
+             :date
+             :avgtempC
+             :avgtempF
+             :moonPhase
+             :moonIllumination
+             :sunRise
+             :sunSet
+             :moonRise
+             :moonSet
+        ></weather-info-header>
+        
         <div> 
             {{ hourly }}
         </div>
-    </div>
+    </section>
 </template>
 
 <script>
 import { computed } from 'vue';
 import { getNameWeekDayByNumber } from '@/utils/getNameWeekDay';
+import WeatherInfoHeader from './WeatherInfoHeader.vue';
 
 export default {
+    components: {
+        WeatherInfoHeader
+    },
     props: {
         astronomy: { required: true},
         avgtempC: { required: true},

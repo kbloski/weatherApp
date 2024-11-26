@@ -32,7 +32,7 @@
 <script>
 import TheCurrentWeather from '../components/TheCurrentWeather.vue';
 import NearestAreaInfo from '../components/NearestAreaInfo.vue';
-import NextDaysWeather from '../components/NextDaysWeather.vue';
+import NextDaysWeather from '../components/NextDays/NextDaysWeather.vue';
 import { useFetch } from '../hooks/useFetch.js';
 import { appLanguage } from '../config';
 

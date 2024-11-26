@@ -32,7 +32,7 @@ export default {
 }
 </script>
 
-<style lang="css">
+<style lang="css" scoped>
 .nearest-area-container {
     background-color: white;
     padding: 1rem;
