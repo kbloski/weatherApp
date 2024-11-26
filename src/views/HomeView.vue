@@ -15,6 +15,7 @@
         <div v-else-if="fetchData">
             <nearest-area-info
                 v-bind="nearestArea"
+                :currentLocation="currentLocation"
             ></nearest-area-info>
             <the-current-weather 
                 :location="currentLocation"
