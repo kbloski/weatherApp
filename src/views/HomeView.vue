@@ -22,6 +22,7 @@
                 v-bind="currentCondidtion" 
             ></the-current-weather>
             <next-days-weather
+                v-if="weatherForNextDays"
                 :weatherList="weatherForNextDays"
             ></next-days-weather>
         </div>
