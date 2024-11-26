@@ -21,20 +21,25 @@
                 :location="currentLocation"
                 v-bind="currentCondidtion" 
             ></the-current-weather>
+            <next-days-weather
+                :weatherList="weatherForNextDays"
+            ></next-days-weather>
         </div>
     </div>
 </template>
 
 <script>
 import TheCurrentWeather from '../components/TheCurrentWeather.vue';
-import NearestAreaInfo from '@/components/NearestAreaInfo.vue';
+import NearestAreaInfo from '../components/NearestAreaInfo.vue';
+import NextDaysWeather from '../components/NextDaysWeather.vue';
 import { useFetch } from '../hooks/useFetch.js';
-import { appLanguage } from '@/config';
+import { appLanguage } from '../config';
 
 export default { 
     components: {
         TheCurrentWeather,
-        NearestAreaInfo
+        NearestAreaInfo,
+        NextDaysWeather
     },
     created(){
         this.currentLocation = "Polska"
@@ -51,7 +56,7 @@ export default {
     },
     computed:{
         fetchData(){
-            console.log( this.fetchWheather?.data)
+            // console.log( this.fetchWheather?.data)
             return this.fetchWheather?.data
         },
         currentCondidtion(){
@@ -61,6 +66,10 @@ export default {
         nearestArea(){
             if (!this.fetchData) return null;
             return this.fetchData.nearest_area[0]
+        },
+        weatherForNextDays(){
+            if( !this.fetchData) return null;
+            return this.fetchData.weather
         }
     },
     methods: {
