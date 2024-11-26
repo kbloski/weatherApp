@@ -9,11 +9,13 @@
         <div v-if="fetchWheather.loading">
             <base-loading></base-loading>
         </div>
-
         <div v-if="fetchWheather.errorCode">
             {{  fetchWheather.errorCode }}
         </div>
-        <div v-else>
+        <div v-else-if="fetchData">
+            <nearest-area-info
+                v-bind="nearestArea"
+            ></nearest-area-info>
             <the-current-weather 
                 :location="currentLocation"
                 v-bind="currentCondidtion" 
@@ -24,12 +26,14 @@
 
 <script>
 import TheCurrentWeather from '../components/TheCurrentWeather.vue';
+import NearestAreaInfo from '@/components/NearestAreaInfo.vue';
 import { useFetch } from '../hooks/useFetch.js';
 import { appLanguage } from '@/config';
 
 export default { 
     components: {
-        TheCurrentWeather
+        TheCurrentWeather,
+        NearestAreaInfo
     },
     created(){
         this.currentLocation = "Polska"
@@ -46,11 +50,16 @@ export default {
     },
     computed:{
         fetchData(){
+            console.log( this.fetchWheather?.data)
             return this.fetchWheather?.data
         },
         currentCondidtion(){
-            if (this.fetchData) return this.fetchData.current_condition[0]
-            return null;
+            if (!this.fetchData) return null;
+            return this.fetchData.current_condition[0]
+        },
+        nearestArea(){
+            if (!this.fetchData) return null;
+            return this.fetchData.nearest_area[0]
         }
     },
     methods: {
