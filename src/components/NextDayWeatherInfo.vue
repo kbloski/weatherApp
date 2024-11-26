@@ -1,7 +1,7 @@
 <template>
     <div>
         <div>
-            {{ getStringWeekDay( dayDate.getDay()) }}
+            {{ getNameWeekDayByNumber( dayDate.getDay()) }}
             ( {{ date }} )
         </div>
         <div>
@@ -24,7 +24,7 @@
 
 <script>
 import { computed } from 'vue';
-import { getStringWeekDay } from '@/utils/getStringWeekDay';
+import { getNameWeekDayByNumber } from '@/utils/getNameWeekDay';
 
 export default {
     props: {
@@ -59,7 +59,7 @@ export default {
             moonSet,
             sunRise,
             sunSet,
-            getStringWeekDay
+            getNameWeekDayByNumber
         }
     }
 }
