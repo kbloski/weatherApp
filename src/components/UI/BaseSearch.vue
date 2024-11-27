@@ -1,9 +1,11 @@
 <template>
-    <div class="search-control">
-        <input :id="inputId" v-model="inputValue" placeholder="" />
-        <label :for="inputId"><slot></slot></label>
-        <button class="search-button" @click="onSubmit">⌕</button>
-    </div>
+    <form>
+        <div class="search-control">
+                <input :id="inputId" v-model="inputValue" placeholder="" />
+                <label :for="inputId"><slot></slot></label>
+                <button class="search-button" @click="onSubmit">⌕</button>
+        </div>
+    </form>
 </template>
 
 <script>
@@ -25,6 +27,7 @@ export default {
     },
     methods: {
         onSubmit( event ){
+            event.preventDefault()
             this.$emit('click-search-button', event);
         }
     },
