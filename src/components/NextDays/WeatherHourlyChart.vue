@@ -40,14 +40,15 @@ export default {
         }
     },
     computed: {
-        hourly(){
+        hourlyData(){
             return this.$props.hourly
         }
     },
     methods: {
         drawTempChart() {
-            for (const hour in this.hourly) {
-                const data = this.hourly[hour];
+            this.temperatures = []
+            for (const hour in this.hourlyData) {
+                const data = this.hourlyData[hour];
                 this.temperatures.push(["", Number(data.tempC), Number(data.DewPointC)]);
             }
 
@@ -62,8 +63,11 @@ export default {
         },
     },
     mounted() {
-        console.log( this.hourly)
         this.drawTempChart();
+
+        window.addEventListener('resize', () => {
+            this.drawTempChart()
+        })
     },
 };
 </script>

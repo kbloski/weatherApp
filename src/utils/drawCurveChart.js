@@ -7,13 +7,13 @@ export function drawChart(
     }
 ) {
     var data = google.visualization.arrayToDataTable(data);
-
+    
     var options = {
         title,
         curveType: "function",
         legend: { position: "top" },
     };
-
+    
     var chart = new google.visualization.LineChart(
         document.getElementById(elementId)
     );
