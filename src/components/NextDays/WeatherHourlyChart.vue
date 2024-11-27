@@ -1,24 +1,4 @@
 <template>
-    <!-- <ul>
-        <li v-for="weather in hourly">
-            <span>
-                Opis pogody:
-                {{  getWeatherDesc( weather) }}
-            </span>
-            <span>
-                Temp: {{ weather.DewPointC }} ({{ weather.DewPointF }})
-            </span>
-            <span>
-                Wilgotność: {{ weather.humidity}} %
-            </span>
-            <span>
-                Prędkość wiatru {{ weather.WindGustKmph }} km/h
-            </span>
-            <span>
-                Widoczność: {{  weather.visibility }} km
-            </span>
-        </li>
-    </ul> -->
     <div :id="elementId" class="hourly-chart"></div>
 </template>
 
@@ -53,7 +33,7 @@ export default {
             }
 
             drawChart({
-                data: [["", `Temp. powietrza`, "Temp. odczuwalna"], ...this.temperatures],
+                data: [["", `Temp. powietrza (°C)`, "Temp. odczuwalna (°C)"], ...this.temperatures],
                 title: `Wykres temperatur dla dnia (${this.$props.date})`,
                 elementId: this.elementId,
             });
@@ -75,5 +55,8 @@ export default {
 <style lang="css" scoped>
 .hourly-chart {
     min-height: 200px;
+    border-radius: 1rem;
+    margin-top: 1rem;
+    overflow: hidden;
 }
 </style>
