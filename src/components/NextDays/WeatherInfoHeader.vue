@@ -7,7 +7,7 @@
         <div>Wschód księżyca: {{ moonRise }}</div>
         <div>Zachód księżyca: {{ moonSet }}</div>
         <div>
-            Średnia dzienna temperatura: 
+            Średnia temp: 
             {{  avgtempC }}℃  ({{  avgtempF }}℉)
         </div>
     </header>    
@@ -27,8 +27,11 @@ header {
 }
 
 header > div {
+    background-color: rgba(127, 255, 212, 0.4);
+    border-radius: 1rem;
+
     font-size: .7rem;
-    padding: .2rem;
+    padding: .2rem 1rem;
     margin: .2rem;
     text-align: center;
 }
