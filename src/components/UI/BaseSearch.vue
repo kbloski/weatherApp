@@ -7,12 +7,14 @@
 </template>
 
 <script>
+import { createRandomId } from '@/utils/createRandomId';
+
 export default {
     props: ['modelValue'],
     emits: ['update:modelValue', 'click-search-button'],
     data(){
         return {
-            inputId: this.getRandomId(),
+            inputId: createRandomId('search'),
             inputValue: ''
         }
     },
@@ -22,9 +24,6 @@ export default {
         }
     },
     methods: {
-        getRandomId(){
-            return 'search'+Math.floor(Math.random()*10000)
-        },
         onSubmit( event ){
             this.$emit('click-search-button', event);
         }

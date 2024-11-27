@@ -15,7 +15,10 @@
              :moonRise
              :moonSet
         ></weather-info-header>
-        <weather-hourly-list :hourly="hourly"></weather-hourly-list>
+        <weather-hourly-list 
+            :hourly="hourly"
+            :date="date"
+        ></weather-hourly-list>
     </section>
 </template>
 
@@ -23,7 +26,7 @@
 import { computed } from 'vue';
 import { getNameWeekDayByNumber } from '@/utils/getNameWeekDay';
 import WeatherInfoHeader from './WeatherInfoHeader.vue';
-import WeatherHourlyList from './WeatherHourlyList.vue';
+import WeatherHourlyList from './WeatherHourlyChart.vue';
 
 export default {
     components: {
