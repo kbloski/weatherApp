@@ -2,7 +2,6 @@
     <section>
         <h4>
             {{ getNameWeekDayByNumber( dayDate.getDay()) }}
-            ( {{ date }} )
         </h4>
         <weather-info-header
              :date
@@ -55,7 +54,6 @@ export default {
             computed( () => props.astronomy[0].sunset)
 
         const dayDate = computed( () => new Date(props.date) )
-        // const 
 
         return {
             dayDate,
@@ -70,3 +68,10 @@ export default {
     }
 }
 </script>
+
+<style scoped>
+
+h4 {
+    text-transform: capitalize;
+}
+</style>
