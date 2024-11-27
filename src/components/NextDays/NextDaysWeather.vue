@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h3>Pogoda na 3 najbliższe dni co 3 godziny</h3>
+        <h3>Wykresy pogodowe</h3>
         <next-day-weather-info
             v-if="weatherList"
             v-for="weather in weatherList"
@@ -23,3 +23,13 @@ export default {
 }
 </script>
 
+<style scoped>
+h3 {
+    border-bottom: 2px solid rgb(71, 71, 71);
+}
+@media screen and (max-width: 800px) {
+    h3 {
+        text-align: center;
+    }
+}
+</style>
