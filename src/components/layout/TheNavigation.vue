@@ -35,4 +35,10 @@ a:hover {
     font-weight: bolder;
 }
 
+@media screen and (max-width: 400px){
+    ul {
+        display: block;
+    }
+}
+
 </style>

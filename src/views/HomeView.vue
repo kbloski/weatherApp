@@ -1,7 +1,5 @@
 <template>
     <div class="view-container">
-        {{ isSuccessLoad}}
-
         <base-search 
             v-model="enteredSearch" 
             @click-search-button="onSearch"
