@@ -1,5 +1,7 @@
 <template>
     <div class="view-container">
+        {{ isSuccessLoad}}
+
         <base-search 
             v-model="enteredSearch" 
             @click-search-button="onSearch"
@@ -10,7 +12,12 @@
             <base-loading></base-loading>
         </div>
         <div v-if="fetchWheather.errorCode">
-            {{  fetchWheather.errorCode }}
+            <base-error v-if="fetchWheather.errorCode === 404">
+                Wprowadzono błędną nazwę miejscowości
+            </base-error>
+            <base-error v-else>
+                Nieznany błąd api - {{  fetchWheather.errorCode }}
+            </base-error>
         </div>
         <div v-else-if="fetchData">
             <nearest-area-info
@@ -70,6 +77,13 @@ export default {
         weatherForNextDays(){
             if( !this.fetchData) return null;
             return this.fetchData.weather
+        },
+        isSuccessLoad(){
+            if (
+                this.fetchWheather.errorCode ||
+                this.fetchWheather.loading
+            ) return false;
+            return true;
         }
     },
     methods: {
@@ -81,11 +95,15 @@ export default {
         onSearch(){
             if(!this.enteredSearch) return;
 
-            localStorage.setItem( lastSavedLocationStorageKey, this.enteredSearch )
-            
             this.currentLocation = this.enteredSearch;
             const url = `https://wttr.in/${this.enteredSearch}?format=j1&lang=${appLanguage}`
             this.fetchWheather.setNewUrl( url );
+        }
+    },
+    watch: {
+        isSuccessLoad( val ){
+            if (!val || !this.enteredSearch) return;
+            localStorage.setItem( lastSavedLocationStorageKey, this.enteredSearch)
         }
     }
 }
