@@ -4,7 +4,7 @@
             <h3>Dziękuję!</h3>
         </template>
         <template v-slot:default>
-                Dzięki za przetestowanie wersji demonstracyjnej tej aplikacji pogodowej aplikacji!
+            Dziękuję za przetestowanie wersji demonstracyjnej tej pogodowej aplikacji!
             <br>
             <br>
             Mam nadzieję, że spełni ona Twoje oczekiwania!
