@@ -48,9 +48,16 @@ export default {
 
         drawTempChart() {
             this.temperatures = []
+
+            let currentHour = 0
             for (const hour in this.hourlyData) {
                 const data = this.hourlyData[hour];
-                this.temperatures.push(["", Number(data.tempC), Number(data.DewPointC)]);
+                this.temperatures.push([
+                    `${parseInt(currentHour)}h`, 
+                    Number(data.tempC), 
+                    Number(data.DewPointC)]
+                );
+                currentHour += 24/7
             }
 
             drawChart({
@@ -72,7 +79,6 @@ export default {
 <style lang="css" scoped>
 .hourly-chart {
     min-height: 200px;
-    border-radius: 1rem;
     margin-top: 1rem;
     overflow: hidden;
 }
