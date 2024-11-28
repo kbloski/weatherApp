@@ -1,8 +1,10 @@
 <template>
     <div class="nearest-area-container">
-        <span>{{ countryName }} > {{ nearestAreaName }} > {{ currentLocation }}</span>
-        <span>Położenie geograficzne: {{ latitude }} / {{ longitude }}</span>
-        <span>Zaludnienie: {{ population }} osób</span>
+        <div>
+            <span>{{ countryName }} > {{ nearestAreaName }} > {{ currentLocation }}</span>
+        </div>
+        <div>Położenie geograficzne: {{ latitude }} / {{ longitude }}</div>
+        <div>Zaludnienie: {{ population }} osób</div>
     </div>
 </template>
 
@@ -36,6 +38,8 @@ export default {
 .nearest-area-container {
     background-color: white;
     padding: 1rem;
+    display: flex;
+    flex-wrap: wrap;
 }
 .nearest-area-container > span {
     margin-right: 1rem;
