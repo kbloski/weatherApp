@@ -1,5 +1,5 @@
 <template>
-    <div class="home-view-container">
+    <div class="view-container">
         <base-search 
             v-model="enteredSearch" 
             @click-search-button="onSearch"
@@ -91,8 +91,3 @@ export default {
 }
 </script>
 
-<style scoped>
-.home-view-container {
-    margin: 1rem;
-}
-</style>

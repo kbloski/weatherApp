@@ -68,6 +68,12 @@ html, body {
   min-height: 85vh;
   margin-top: 1rem;
 }
+
+.view-container {
+    margin: 1rem;
+}
+
+
 .page-animation-enter-from,
 .page-animation-leave-to {
   opacity: 0;

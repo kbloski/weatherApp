@@ -2,10 +2,10 @@
     <header>
         <h1 class="title">{{ appName }}</h1>
         <the-navigation></the-navigation>
-        <div class="actions">
-            <span class="search-icon">⌕</span>
-            <span class="email-icon">✉</span>
-            <span class="burger-icon">☰</span>
+        <div class="actions" >
+            <span class="search-icon" @click="noActive">⌕</span>
+            <span class="email-icon" @click="contactAction">✉</span>
+            <span class="burger-icon" @click="menuAction">☰</span>
         </div>
     </header>
 </template>
@@ -21,6 +21,17 @@ export default {
     data(){
         return {
             appName
+        }
+    },
+    methods: {
+        noActive(){
+            alert("Ta opcja jest jeszcze niedostępna... przepraszamy za wszelkie niedogodności")
+        },
+        contactAction(){
+            this.$router.push( { path: '/contact'} )
+        },
+        menuAction(){
+            this.$router.push( { path: '/'})
         }
     }
 }
@@ -51,8 +62,12 @@ header {
 
 .actions > * {
     padding-left: .2rem;
+    cursor: pointer;
 }
 
+.actions > *:hover {
+    color: antiquewhite;
+}
 
 .search-icon {
     font-size: calc(var(--font-size) * 1.4);
