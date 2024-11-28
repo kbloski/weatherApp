@@ -41,7 +41,7 @@ export default {
     display: flex;
     flex-wrap: wrap;
 }
-.nearest-area-container > span {
+.nearest-area-container > div {
     margin-right: 1rem;
 }
 </style>

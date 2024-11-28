@@ -2,7 +2,14 @@
   <div class="page-background"></div>
   <the-header></the-header>
   <div class="page-container">
-      <router-view></router-view>
+    <router-view v-slot="slotProps">
+      <transition 
+        name="page-animation" 
+        mode="out-in"
+      > 
+        <component :is="slotProps.Component"></component>
+      </transition>
+    </router-view>
   </div>
   <the-information-modal></the-information-modal>
 </template>
@@ -60,6 +67,20 @@ html, body {
   max-width: 1260px;
   min-height: 85vh;
   margin-top: 1rem;
+}
+.page-animation-enter-from,
+.page-animation-leave-to {
+  opacity: 0;
+}
+
+.page-animation-enter-to,
+.page-animation-leave-from {
+  opacity: 1;
+}
+
+.page-animation-enter-active,
+.page-animation-leave-active {
+  transition: all .3s ease;
 }
 
 @media screen and (max-width: 800px){
