@@ -25,8 +25,7 @@ header {
 }
 
 header > div {
-    background-color: rgba(127, 229, 255, 0.4);
-    border-radius: 1rem;
+    background-color: rgba(127, 187, 255, 0.4);
 
     font-size: .7rem;
     padding: .2rem 1rem;

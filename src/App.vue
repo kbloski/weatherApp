@@ -61,6 +61,7 @@ html, body {
 
 @media screen and (max-width: 800px){
   .page-container {
+    background: none;
     border: none;
     padding: .5rem;
   }
