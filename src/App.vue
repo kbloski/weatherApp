@@ -4,14 +4,17 @@
   <div class="page-container">
       <router-view></router-view>
   </div>
+  <the-information-modal></the-information-modal>
 </template>
 
 <script>
 import TheHeader from './components/layout/TheHeader.vue';
+import TheInformationModal from './components/layout/TheInformationModal.vue';
 
 export default {
   components: {
-    TheHeader
+    TheHeader,
+    TheInformationModal
   }
 }
 </script>
