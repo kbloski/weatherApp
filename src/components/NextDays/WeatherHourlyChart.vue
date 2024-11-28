@@ -35,7 +35,10 @@ export default {
         }
     },
     mounted(){
-
+        window.addEventListener('resize', () => {
+            if (!this.isDropdownActive) return;
+            this.drawTempChart()
+        })
     },
     methods: {
         onActiveDropdown( visibility ){
