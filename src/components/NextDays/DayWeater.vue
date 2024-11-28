@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import NextDayWeatherInfo from './NextDayWeatherInfo.vue';
+import NextDayWeatherInfo from './WeatherInfo.vue';
 
 export default {
     components: {

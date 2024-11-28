@@ -1,13 +1,11 @@
 <template>
     <header>
-        <div>Ośw. księżyca: {{ moonIllumination }}%</div>
-        <div>Faza: {{ moonPhase }}</div>
-        <div>Wsch. słońca: {{ sunRise }}</div>
-        <div>Zach. słońca: {{ sunSet }}</div>
-        <div>Wsch. księżyca: {{ moonRise }}</div>
-        <div>Zach. księżyca: {{ moonSet }}</div>
+        <div>Wschód ☀️: {{ sunRise }} / Zachód 🌄: {{ sunSet }}</div>
+        <div>Wschód 🌙: {{ moonRise }} / Zachód 🌑: {{ moonSet }}</div>
+        <div>Oświetlenie 🌙: {{ moonIllumination }}%</div>
+        <div>Faza księżyca 🌘: {{ moonPhase }}</div>
         <div>
-            Śr. temp: 
+            Średnia temp. 🌡️: 
             {{ avgtempC }}℃ ({{ avgtempF }}℉)
         </div>
     </header>    

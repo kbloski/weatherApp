@@ -26,7 +26,7 @@ export default {
         return {
             elementId: null,
             temperatures: [],
-            isDropdownActive: true
+            isDropdownActive: false
         };
     },
     computed: {
