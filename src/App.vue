@@ -17,6 +17,10 @@ export default {
 </script>
 
 <style>
+:root {
+  --background-dark: rgba(34, 79, 131, 0.8);
+}
+
 * {
   box-sizing: border-box;
 }

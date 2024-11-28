@@ -1,5 +1,19 @@
 <template>
-    <div :id="elementId" class="hourly-chart"></div>
+    <base-dropdown 
+        @visibility="onActiveDropdown" 
+        :visibility="isDropdownActive"
+    >
+        <template v-slot:actions >
+           <div v-if="!isDropdownActive">Pokaż wykres temperatur</div> 
+           <div v-else>Ukryj wykres</div> 
+        </template>
+        <template v-slot:default>
+            <div 
+                :id="elementId" 
+                class="hourly-chart"
+            ></div>
+        </template>
+    </base-dropdown>
 </template>
 
 <script>
@@ -10,21 +24,28 @@ export default {
     props: ["hourly", "date"],
     data() {
         return {
-            elementId: createRandomId("chart-hourly"),
+            elementId: null,
             temperatures: [],
+            isDropdownActive: true
         };
-    },
-    watch: {
-        hourly(){
-            this.drawTempChart()
-        }
     },
     computed: {
         hourlyData(){
             return this.$props.hourly
         }
     },
+    mounted(){
+
+    },
     methods: {
+        onActiveDropdown( visibility ){
+            this.isDropdownActive = visibility;
+                setTimeout(() => {
+                if ( visibility ) this.drawTempChart()
+                
+            }, 0)
+        },
+
         drawTempChart() {
             this.temperatures = []
             for (const hour in this.hourlyData) {
@@ -42,12 +63,8 @@ export default {
             return weather.weatherDesc[0].value;
         },
     },
-    mounted() {
-        this.drawTempChart();
-
-        window.addEventListener('resize', () => {
-            this.drawTempChart()
-        })
+    created(){
+        this.elementId = createRandomId("chart-hourly")
     },
 };
 </script>

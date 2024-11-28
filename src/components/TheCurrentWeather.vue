@@ -105,7 +105,7 @@ export default {
     margin-top: 1rem;
     --padding-container: 10px;
     color: white;
-    background-color: rgba(34, 79, 131, 0.8);
+    background-color: var(--background-dark);
     font-weight: lighter;
     position: relative
 }
