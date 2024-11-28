@@ -7,6 +7,7 @@
            <div v-if="!isDropdownActive">Pokaż wykres temperatur</div> 
            <div v-else>Ukryj wykres</div> 
         </template>
+        
         <template v-slot:default>
             <div 
                 :id="elementId" 

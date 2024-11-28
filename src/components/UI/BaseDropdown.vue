@@ -6,9 +6,14 @@
                 <div v-else>Pokaż</div>
             </slot>
         </div>
-        <div v-if="isActive">
-            <slot name="default"></slot>
-        </div>
+        <transition 
+            name="dropdown-body-animation" 
+            mode="out-in"
+        >
+            <div v-if="isActive">
+                <slot name="default"></slot>
+            </div>
+        </transition>
     </div>
 </template>
 
@@ -46,5 +51,18 @@ export default {
     cursor: pointer;
     padding: 1rem .5rem;
 }
+
+
+.dropdown-body-animation-enter-from,
+.dropdown-body-animation-leave-to {
+    transform: translateX(-100px);
+    opacity: 0;
+}
+.dropdown-body-animation-enter-active,
+.dropdown-body-animation-leave-active
+{
+    transition: all .3s ease-in;
+}
+
 
 </style>
