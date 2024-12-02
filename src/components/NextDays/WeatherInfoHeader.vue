@@ -1,7 +1,6 @@
 <template>
     <header>
         <div>Wschód ☀️: {{ sunRise }} / Zachód 🌄: {{ sunSet }}</div>
-        <div>Wschód 🌙: {{ moonRise }} / Zachód 🌑: {{ moonSet }}</div>
         <div>Oświetlenie 🌙: {{ moonIllumination }}%</div>
         <div>Faza księżyca 🌘: {{ moonPhase }}</div>
         <div>
